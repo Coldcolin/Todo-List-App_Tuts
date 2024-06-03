@@ -1,0 +1,132 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+main{
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  gap: 30px;
+}
+.firstBox{
+  width: 100%;
+  height: 18%;
+  display: flex;
+  gap: 30px;
+  
+}
+
+.firstBox div{
+  flex: 1;
+  background-color: blue;
+  animation: colorchange 3s linear infinite;
+}
+
+@keyframes colorchange {
+  0% {
+    background-color: blue;
+  }
+  50%{
+    background-color: blueviolet;
+  }
+  70%{
+    background-color: cadetblue;
+  }
+  100%{
+    background-color: blue;
+  }
+}
+.secondBox{
+  width: 100%;
+  height: 32%;
+  background-color: rgb(247, 159, 65);
+  background-image: url("/public/GEMINI_CHAT.png");
+}
+.thirdBox{
+  width: 100%;
+  height: 32%;
+  display: flex;
+  gap: 30px;
+}
+.thirdBox div{
+  flex: 1;
+  background-color: rgb(99, 165, 45);
+}
+
+.thirdBox div:hover{
+  animation: threeBoxes 5s alternate 350ms 4;
+}
+
+@keyframes threeBoxes {
+  0%{
+    transform: scale(1);
+    transform: rotate(30);
+  }
+  20%{
+    transform: scale(1.2);
+    background-color: rgb(45, 141, 165);
+  }
+  40%{
+    transform: scale(1.4);
+    background-color: rgb(165, 113, 45);
+  }
+  60%{
+    transform: scale(1.6);
+    background-color: rgb(210, 25, 25);
+  }
+  80%{
+    transform: scale(1.4);
+    background-color: rgb(187, 201, 24);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+.fourthBox{
+  width: 100%;
+  height: 18%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+.fourthBox div{
+  background-color: rgb(226, 52, 52);
+  transition: all 350ms;
+}
+.fourthBox div:hover{
+  background-color: yellow;
+  transition: all 350ms;
+  transform: scale(1.1);
+}
+@media screen and (width <= 810px) {
+  .firstBox{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .thirdBox{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .fourthBox{
+    grid-template-columns:  1fr 1fr;
+    gap: 10px;
+  }
+}
+
+@media screen and (width <= 414px) {
+  .fourthBox{
+    grid-template-columns: 1fr;
+  }
+  .fourthBox div{
+    height: 50px;
+  }
+  .remove {
+    display: none;
+  }
+}
